@@ -1,0 +1,4 @@
+﻿[*.cs]
+
+# IDE0059: Bir değerin gereksiz ataması
+csharp_style_unused_value_assignment_preference = unused_local_variable
