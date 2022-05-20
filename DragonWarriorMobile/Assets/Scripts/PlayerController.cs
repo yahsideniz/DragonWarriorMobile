@@ -28,10 +28,10 @@ public class PlayerController : MonoBehaviour
     public CapsuleCollider2D attackCol;
 
     public int fireBallCount;
-    public Text fireBallText; // Canvas olaylarý için.
+    public Text fireBallText;
     public Transform bulletSpawnPos; // yukardaki dedigimiz spawn objesini buraya atýcaz.
     public GameObject leftBullet, rightBullet;
-    public bool isLookingRight; // bunu git saga sola baktýgýmýz kodda sag ise true sol ise false yap
+    public bool isLookingRight;
     public bool FireBallCheck;
 
     public bool flyKick;
@@ -50,10 +50,10 @@ public class PlayerController : MonoBehaviour
         life = 3;
         lifeText.text = life.ToString();// canvasa caný yazdýrýyoruz.
         normalColor = gameObject.GetComponent<SpriteRenderer>().color;
-        attack = false; // ilk atak(kafa atma) için
+        attack = false; // boynuz darbesi için
 
-        isLookingRight = true; //ateþtopu için
-        fireBallText.text = fireBallCount.ToString(); // ateþtopunun kaç tane old. yazýsý için
+        isLookingRight = true; //ateþ topu için
+        fireBallText.text = fireBallCount.ToString(); // kaç tane ateþ topu var yazýsý için
         FireBallCheck = false; // ateþ topu için
 
         flyKickCollider = gameObject.transform.Find("Foot").GetComponent<BoxCollider2D>(); // uçan tekme için collider kullanýyoruz
@@ -73,9 +73,9 @@ public class PlayerController : MonoBehaviour
         //    rb.AddForce(new Vector2(0, jumpSpeed));
         //}
 
-       
 
-        //üst üste damage almasýn diye ve renk deðiþsin damage alinca
+
+        //üst üste damage almasýn diye ve damage alinca renk deðiþsin 
         if (damagedTime > 0)
         {
             damagedTime -= Time.deltaTime;
@@ -121,7 +121,7 @@ public class PlayerController : MonoBehaviour
 
 
 
-        //-----------------------------------------------------------------------
+        //---------------------------------------------------------
 
 
         // Fire Ball Attack
@@ -143,14 +143,14 @@ public class PlayerController : MonoBehaviour
         //    else
         //    {
         //        FireBallCheck = false;
-                
+
         //    }
         //}
 
         FireBallAttack(0);
 
 
-        //-------------------------------------------------------------
+        //---------------------------------------------------------
 
         //Attack  FlyKick
 
@@ -163,7 +163,7 @@ public class PlayerController : MonoBehaviour
 
         //if (flyKick)
         //{
-            
+
 
         //    if (attackTimer > 0)
         //    {
@@ -172,7 +172,7 @@ public class PlayerController : MonoBehaviour
         //    else
         //    {
         //        flyKick = false;
-               
+
         //    }
         //}
 
@@ -215,7 +215,7 @@ public class PlayerController : MonoBehaviour
 
     }
 
-    // Butonlar için Haraket ve Skill Kodlarý
+    // Mobil butonlar için
 
     public void Left()
     {
